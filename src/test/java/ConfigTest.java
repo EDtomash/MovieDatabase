@@ -5,14 +5,14 @@ import org.testng.annotations.BeforeMethod;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
-public class ConfigureTest {
+public class ConfigTest {
 
     @BeforeMethod
     public void setup() {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
-        open("https://www.themoviedb.org/");
+        open("https://www.themoviedb.org");
     }
 
     @AfterMethod
