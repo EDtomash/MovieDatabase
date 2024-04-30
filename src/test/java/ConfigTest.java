@@ -6,8 +6,6 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class ConfigTest {
-    String login = "wertertdfgdfg";
-    String pass = "12301230";
 
     @BeforeMethod
     public void setup() {
