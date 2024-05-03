@@ -7,6 +7,9 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ConfigTest {
 
+   String userName = "wertertdfgdfg";
+   String userPassword = "12301230";
+
     @BeforeMethod
     public void setup() {
         Configuration.browser = "chrome";
