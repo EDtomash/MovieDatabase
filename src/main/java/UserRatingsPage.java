@@ -1,2 +1,2 @@
-public class UserRatingsPage extends AbstractBasePage<UserWatchlistPage>{
+public class UserRatingsPage extends UserBasePage {
 }
