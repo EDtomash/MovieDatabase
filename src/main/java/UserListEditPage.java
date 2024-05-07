@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Condition.interactable;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class UserListEditPage extends AbstractBasePage<UserListEditPage>{
+public class UserListEditPage extends AbstractBasePage<UserListEditPage> {
 
     private final SelenideElement NAME_FIELD = $(By.id("name"));
     private final SelenideElement DESCRIPTION_FIELD = $(By.id("description"));

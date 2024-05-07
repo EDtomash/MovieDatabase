@@ -7,7 +7,7 @@ public class AddMoviesToList extends ConfigTest {
     public void addingMovie() {
         String listTitle = "My list";
 
-       String createdListTitle = new HomePage()
+        String createdListTitle = new HomePage()
                 .acceptAllCookies()
                 .openLoginPage()
                 .setUserName(userName)

@@ -9,6 +9,8 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
 
     private final SelenideElement JOIN_TMDB_REGISTER_BTN = $(By.xpath("//div[@class='flex']//a[@href='/signup']"));
     private final SelenideElement ACCEPT_COOKIES = $(By.id("onetrust-accept-btn-handler"));
+    private final SelenideElement MOVIE_BTN = $x("//ul[@data-role='menu']/li[1]/a");
+    private final SelenideElement POPULAR_NAV_LINK = $x("//div[@class='k-animation-container']//a[@href='/movie']");
     private final SelenideElement LOGIN_NAV_LINK = $x("//div[@class='flex']//a[@href='/login']");
     private final SelenideElement PROFILE_MENU = $(By.className("tooltip_hover"));
     private final SelenideElement USER_LIST_NAV_LINK = $x("//div[@class='k-tooltip-content']//a[text()='Lists']");
@@ -32,5 +34,12 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
         PROFILE_MENU.shouldBe(visible, interactable).click();
         USER_LIST_NAV_LINK.shouldBe(visible, interactable).click();
         return new UserListPage();
+    }
+
+    public MoviesSearchPage openPopularMoviePage() {
+        MOVIE_BTN.shouldBe(visible).click();
+        POPULAR_NAV_LINK.shouldBe(visible).click();
+        return new MoviesSearchPage();
+
     }
 }

@@ -1,2 +1,2 @@
-public class UserMainPage extends UserBasePage{
+public class UserMainPage extends UserBasePage {
 }

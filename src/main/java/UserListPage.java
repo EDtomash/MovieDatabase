@@ -16,6 +16,6 @@ public class UserListPage extends UserBasePage {
     }
 
     public String getListTitle() {
-      return LIST_CARDS.get(0).getText();
+        return LIST_CARDS.get(0).getText();
     }
 }

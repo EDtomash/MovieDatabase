@@ -1,2 +1,2 @@
-public class UserListDeletePage extends AbstractBasePage<UserListDeletePage>{
+public class UserListDeletePage extends AbstractBasePage<UserListDeletePage> {
 }

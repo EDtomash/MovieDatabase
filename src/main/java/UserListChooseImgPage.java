@@ -1,2 +1,2 @@
-public class UserListChooseImgPage {
+public class UserListChooseImgPage extends AbstractBasePage<UserListChooseImgPage> {
 }
