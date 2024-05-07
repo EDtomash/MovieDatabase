@@ -1,11 +1,11 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Login extends ConfigTest{
+public class Login extends ConfigTest {
 
     @Test
     public void loginTest() {
-       String userNameText = new HomePage()
+        String userNameText = new HomePage()
                 .acceptAllCookies()
                 .openLoginPage()
                 .setUserName(userName)
@@ -15,6 +15,5 @@ public class Login extends ConfigTest{
 
         Assert.assertEquals(userNameText, userName);
     }
-
 }
 
