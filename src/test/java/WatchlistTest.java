@@ -1,10 +1,11 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WatchlistTest extends ConfigTest{
 
     @Test
     public void watchList() {
-        new HomePage()
+       String addedFilm = new HomePage()
                 .acceptAllCookies()
                 .openLoginPage()
                 .setUserName(userName)
@@ -14,6 +15,7 @@ public class WatchlistTest extends ConfigTest{
                 .getMovieBtn()
                 .clickAddToWatchlist()
                 .openUserWatchlistTab()
-
+                .getNameMovie();
+        Assert.assertEquals(addedFilm,"Abigail");
     }
 }

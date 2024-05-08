@@ -7,7 +7,7 @@ public class HomePage extends AbstractBasePage<HomePage> {
 
     private final ElementsCollection MOVIE_BTN = $$x("//div[@id='trending_scroller']//div[@class='card style_1']");
     public MoviePage getMovieBtn() {
-        MOVIE_BTN.get(10).click();
+        MOVIE_BTN.get(1).click();
         return new MoviePage();
     }
 }
