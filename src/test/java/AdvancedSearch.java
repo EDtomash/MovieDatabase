@@ -1,10 +1,20 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AdvancedSearch extends ConfigTest {
 
     @Test
     public void search() {
-        new HomePage()
-                .openPopularMoviePage();
+       String resultOfSortingMovies = new HomePage()
+                .acceptAllCookies()
+                .openPopularMoviePage()
+                .ascendingSort()
+                .selectGenresAction()
+                .selectCertificationR()
+                .selectLanguageJapanese()
+                .clickOnSearch()
+                .getMovieTitleFromResults();
+
+        Assert.assertEquals(resultOfSortingMovies, "Акира");
     }
 }
