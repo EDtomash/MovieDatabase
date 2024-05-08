@@ -16,6 +16,8 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
     private final SelenideElement LOGO_BTN = $x("//a[@class='logo']");
     private final SelenideElement PROFILE_MENU = $(By.className("tooltip_hover"));
     private final SelenideElement USER_LIST_NAV_LINK = $x("//div[@class='k-tooltip-content']//a[text()='Lists']");
+    private final SelenideElement WATCHLIST_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Watchlist']");
+    private final SelenideElement MOVIE_NAME = $x("//h2[text()='Abigail']");
 
     public T acceptAllCookies() {
         ACCEPT_COOKIES.shouldBe(visible).click();
@@ -54,5 +56,15 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
         POPULAR_NAV_LINK.shouldBe(visible).click();
         return new MoviesSearchPage();
 
+    }
+
+    public UserWatchlistPage openUserWatchlistTab() {
+        PROFILE_MENU.click();
+        WATCHLIST_TAB.click();
+        return new UserWatchlistPage();
+    }
+
+    public String getNameMovie() {
+        return MOVIE_NAME.getText();
     }
 }
