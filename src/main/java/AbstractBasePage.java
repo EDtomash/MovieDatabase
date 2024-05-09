@@ -55,7 +55,6 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
         MOVIE_BTN.shouldBe(visible).click();
         POPULAR_NAV_LINK.shouldBe(visible).click();
         return new MoviesSearchPage();
-
     }
 
     public UserWatchlistPage openUserWatchlistTab() {
