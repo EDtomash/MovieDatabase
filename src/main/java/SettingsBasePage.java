@@ -1,2 +1,2 @@
-public class SettingsBasePage extends UserBasePage{
+public class SettingsBasePage extends AbstractBasePage <SettingsBasePage>{
 }
