@@ -10,6 +10,7 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
     private final SelenideElement JOIN_TMDB_REGISTER_BTN = $(By.xpath("//div[@class='flex']//a[@href='/signup']"));
     private final SelenideElement ACCEPT_COOKIES = $(By.id("onetrust-accept-btn-handler"));
     private final SelenideElement MOVIE_BTN = $x("//ul[@data-role='menu']/li[1]/a");
+    private final SelenideElement ACCOUNT_SETTINGS_NAV_LINK = $x("//div[@class='k-tooltip-content']//a[@href='/settings/account']");
     private final SelenideElement POPULAR_NAV_LINK = $x("//div[@class='k-animation-container']//a[@href='/movie']");
     private final SelenideElement LOGIN_NAV_LINK = $x("//div[@class='flex']//a[@href='/login']");
     private final SelenideElement RATING_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Ratings']");
@@ -61,6 +62,12 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
         PROFILE_MENU.click();
         WATCHLIST_TAB.click();
         return new UserWatchlistPage();
+    }
+
+    public UserSettingsAccount openAccountSettings() {
+        PROFILE_MENU.click();
+        ACCOUNT_SETTINGS_NAV_LINK.click();
+        return new UserSettingsAccount();
     }
 
     public String getNameMovie() {
