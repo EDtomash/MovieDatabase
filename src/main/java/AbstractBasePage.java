@@ -19,6 +19,8 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
     private final SelenideElement USER_LIST_NAV_LINK = $x("//div[@class='k-tooltip-content']//a[text()='Lists']");
     private final SelenideElement WATCHLIST_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Watchlist']");
     private final SelenideElement MOVIE_NAME = $x("//h2[text()='Abigail']");
+    private final SelenideElement PROFILE_SETTING_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Settings']");
+    private final SelenideElement PROFILE_EDIT_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Edit Profile']");
 
     public T acceptAllCookies() {
         ACCEPT_COOKIES.shouldBe(visible).click();
@@ -72,5 +74,17 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
 
     public String getNameMovie() {
         return MOVIE_NAME.getText();
+    }
+
+    public UserAccountSettingsPage openAccountSettings() {
+        PROFILE_MENU.click();
+        PROFILE_SETTING_TAB.click();
+        return new UserAccountSettingsPage();
+    }
+
+    public UserEditProfilePage openEditProfile() {
+        PROFILE_MENU.click();
+        PROFILE_EDIT_TAB.click();
+        return new UserEditProfilePage();
     }
 }
