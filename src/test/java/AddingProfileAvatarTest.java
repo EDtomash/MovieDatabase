@@ -1,11 +1,11 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddingProfileAvatarTest extends ConfigTest{
+public class AddingProfileAvatarTest extends ConfigTest {
 
     @Test
     public void addingProfileAvatar() {
-       UserEditProfilePage currentAvatar = new HomePage()
+        UserEditProfilePage currentAvatar = new HomePage()
                 .acceptAllCookies()
                 .openLoginPage()
                 .setUserName(userName)

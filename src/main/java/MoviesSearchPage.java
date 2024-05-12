@@ -41,7 +41,7 @@ public class MoviesSearchPage extends AbstractBasePage<MoviesSearchPage> {
         return this;
     }
 
-    public String  getMovieTitleFromResults() {
-       return MOVIES_LIST.get(0).getText();
+    public String getMovieTitleFromResults() {
+        return MOVIES_LIST.get(0).getText();
     }
 }
