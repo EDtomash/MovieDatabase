@@ -1,3 +1,5 @@
+import com.codeborne.selenide.Selenide;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class StreamingServices extends ConfigTest{
@@ -13,6 +15,14 @@ public class StreamingServices extends ConfigTest{
                 .submitLogin()
                 .openAccountSettings()
                 .openAccountSettings()
-                .openStreamingServicesTab();
+                .openStreamingServicesTab()
+                .subscribeToNetflix();
+
+        Selenide.refresh();
+
+      String addedNetflix = new UserSettingsStreamingServicesPage()
+                .checkNetflixSub();
+
+        Assert.assertEquals(addedNetflix, "Netflix");
     }
 }
