@@ -20,7 +20,7 @@ public class StreamingServices extends ConfigTest{
 
         Selenide.refresh();
 
-      String addedNetflix = new UserSettingsStreamingServicesPage()
+      String addedNetflix = new UserStreamingServicesPage()
                 .checkNetflixSub();
 
         Assert.assertEquals(addedNetflix, "Netflix");

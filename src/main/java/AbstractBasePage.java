@@ -64,10 +64,10 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
         return new UserWatchlistPage();
     }
 
-    public UserSettingsAccount openAccountSettings() {
+    public UserAccountSettingsPage openAccountSettings() {
         PROFILE_MENU.click();
         ACCOUNT_SETTINGS_NAV_LINK.click();
-        return new UserSettingsAccount();
+        return new UserAccountSettingsPage();
     }
 
     public String getNameMovie() {
