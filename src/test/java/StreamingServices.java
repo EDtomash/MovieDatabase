@@ -2,7 +2,7 @@ import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class StreamingServices extends ConfigTest{
+public class StreamingServices extends ConfigTest {
 
     @Test
     public void streamingServices() {
@@ -20,7 +20,7 @@ public class StreamingServices extends ConfigTest{
 
         Selenide.refresh();
 
-      String addedNetflix = new UserStreamingServicesPage()
+        String addedNetflix = new UserStreamingServicesPage()
                 .checkNetflixSub();
 
         Assert.assertEquals(addedNetflix, "Netflix");

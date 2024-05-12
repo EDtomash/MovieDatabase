@@ -14,6 +14,6 @@ public class UserStreamingServicesPage extends SettingsBasePage {
     }
 
     public String checkNetflixSub() {
-      return SUBSCRIBED_PROVIDER.getAttribute("alt");
+        return SUBSCRIBED_PROVIDER.getAttribute("alt");
     }
 }

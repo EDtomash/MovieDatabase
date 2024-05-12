@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class MoviePage extends AbstractBasePage<MoviePage>{
+public class MoviePage extends AbstractBasePage<MoviePage> {
 
     private final SelenideElement VIBE_BTN = $(By.xpath("//div[@id='vibes_label']"));
     private final SelenideElement RATING_SCORE = $(By.xpath("//span[text()='60']"));
@@ -23,14 +23,17 @@ public class MoviePage extends AbstractBasePage<MoviePage>{
         VIBE_BTN.click();
         return this;
     }
+
     public MoviePage clickRatingScoreBtn() {
         RATING_SCORE.click();
         return this;
     }
+
     public MoviePage clickDoneBtn() {
         DONE_BTN.click();
         return this;
     }
+
     public UserRatingsPage openRatingsPage() {
         RATINGS_MOVIES_BTN.shouldBe(visible, interactable).click();
         return new UserRatingsPage();

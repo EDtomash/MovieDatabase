@@ -1,4 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
+
 import java.io.File;
 
 import static com.codeborne.selenide.Selenide.$x;
@@ -16,7 +17,7 @@ public class UserEditProfilePage extends SettingsBasePage {
         return new UserEditProfilePage();
     }
 
-    public boolean newAvatarDisplayed () {
+    public boolean newAvatarDisplayed() {
         CURRENT_AVATAR.getText();
         return true;
     }
