@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 public class BlockedEditingOptions extends ConfigTest{
     @Test
     public void editionOptions() {
-        MovieEditPage textField = new HomePage()
+        boolean textField = new HomePage()
                 .acceptAllCookies()
                 .openLoginPage()
                 .setUserName(userName)
@@ -18,5 +18,6 @@ public class BlockedEditingOptions extends ConfigTest{
                 .getMovieBtn()
                 .openEditMoviePage()
                 .clickMovieTitle();
+        Assert.assertTrue(textField, "Field is disabled");
     }
 }

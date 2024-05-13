@@ -6,10 +6,10 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MovieEditPage extends AbstractBasePage <MovieEditPage>{
 
-    private final SelenideElement EDIT_TITLE_FIELD = $x("(//label[@class='k-form-field'])[3]").shouldNotBe(clickable);
+    private final SelenideElement EDIT_TITLE_FIELD = $x("//input[@id='original_name']");
 
-    public MovieEditPage clickMovieTitle() {
-        EDIT_TITLE_FIELD.click();
-        return this;
+    public boolean clickMovieTitle() {
+        EDIT_TITLE_FIELD.shouldBe(disabled);
+        return true;
     }
 }
