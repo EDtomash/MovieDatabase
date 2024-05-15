@@ -1,8 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.interactable;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -16,32 +14,32 @@ public class MoviePage extends AbstractBasePage<MoviePage> {
     private final SelenideElement EDIT_MOVIE_PAGE = $x("//p[@class='rounded new_button pad']");
 
     public MoviePage clickAddToWatchlist() {
-        ADD_TO_WATCHLIST_BTN.click();
+        getVisibilitiOfElement(ADD_TO_WATCHLIST_BTN).click();
         return new MoviePage();
     }
 
     public MoviePage clickVibeBtn() {
-        VIBE_BTN.click();
+        getVisibilitiOfElement(VIBE_BTN).click();
         return this;
     }
 
     public MoviePage clickRatingScoreBtn() {
-        RATING_SCORE.click();
+        getVisibilitiOfElement(RATING_SCORE).click();
         return this;
     }
 
     public MoviePage clickDoneBtn() {
-        DONE_BTN.click();
+        getVisibilitiOfElement(DONE_BTN).click();
         return this;
     }
 
     public UserRatingsPage openRatingsPage() {
-        RATINGS_MOVIES_BTN.shouldBe(visible, interactable).click();
+        getVisibilitiOfElement(RATINGS_MOVIES_BTN).click();
         return new UserRatingsPage();
     }
 
     public MovieEditPage openEditMoviePage() {
-        EDIT_MOVIE_PAGE.click();
+        getVisibilitiOfElement(EDIT_MOVIE_PAGE).click();
         return new MovieEditPage();
     }
 }

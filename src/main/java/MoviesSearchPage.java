@@ -2,7 +2,6 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MoviesSearchPage extends AbstractBasePage<MoviesSearchPage> {
@@ -15,33 +14,33 @@ public class MoviesSearchPage extends AbstractBasePage<MoviesSearchPage> {
     private final ElementsCollection MOVIES_LIST = $$x("//div[@id='page_1']//h2");
 
     public MoviesSearchPage ascendingSort() {
-        SORT_DROPDOWN.click();
+        getVisibilitiOfElement(SORT_DROPDOWN).click();
         $(By.id("sort_by")).selectOptionByValue("title.asc");
         return this;
     }
 
     public MoviesSearchPage selectGenresAction() {
-        GENRES_ACTION.click();
+        getVisibilitiOfElement(GENRES_ACTION).click();
         return this;
     }
 
     public MoviesSearchPage selectCertificationR() {
-        CERTIFICATION_R.scrollTo().shouldBe(visible).click();
+        getVisibilitiOfElement(CERTIFICATION_R).click();
         return this;
     }
 
     public MoviesSearchPage selectLanguageJapanese() {
-        LANGUAGE_DROPDOWN.click();
+        getVisibilitiOfElement(LANGUAGE_DROPDOWN).click();
         $(By.id("language")).selectOptionByValue("ja");
         return this;
     }
 
     public MoviesSearchPage clickOnSearch() {
-        SEARCH_BTN.scrollTo().shouldBe(visible).click();
+        getVisibilitiOfElement(SEARCH_BTN).click();
         return this;
     }
 
     public String getMovieTitleFromResults() {
-        return MOVIES_LIST.get(0).getText();
+        return getListPresentElements(MOVIES_LIST).get(0).getText();
     }
 }

@@ -7,7 +7,7 @@ public class SettingsBasePage extends AbstractBasePage<SettingsBasePage> {
     private final ElementsCollection SETTINGS_MENU = $$x("//div[@id='settings_menu_scroller']//a");
 
     public UserStreamingServicesPage openStreamingServicesTab() {
-        SETTINGS_MENU.get(2).click();
+        getListPresentElements(SETTINGS_MENU).get(2).click();
         return new UserStreamingServicesPage();
     }
 }

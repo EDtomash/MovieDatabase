@@ -7,6 +7,6 @@ public class UserRatingsPage extends UserBasePage {
     private final ElementsCollection RATING_SCORE_MOVIE = $$x("//span[@class='rating wrapper']/span[@class='value']");
 
     public String ratingScoreMovie() {
-        return RATING_SCORE_MOVIE.get(0).getText();
+        return getListPresentElements(RATING_SCORE_MOVIE).get(0).getText();
     }
 }
