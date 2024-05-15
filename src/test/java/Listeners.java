@@ -17,4 +17,9 @@ public class Listeners implements ITestListener {
     public void onTestFailure(ITestResult result) {
         System.out.println("Test Failure " + result.getName());
     }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        System.out.println("Test Skipped " + result.getName());
+    }
 }
