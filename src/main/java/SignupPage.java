@@ -1,8 +1,6 @@
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.interactable;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
@@ -16,31 +14,31 @@ public class SignupPage extends AbstractBasePage<SignupPage> {
     private final SelenideElement ACCOUNT_VERIFICATION_MSG = $x("//div[@class='carton']//li");
 
     public SignupPage setUserName(String username) {
-        USERNAME_FIELD.shouldBe(visible, interactable).sendKeys(username);
+        getVisibilitiOfElement(USERNAME_FIELD).sendKeys(username);
         return this;
     }
 
     public SignupPage setPassword(String password) {
-        PASSWORD_FIELD.shouldBe(visible, interactable).sendKeys(password);
+        getVisibilitiOfElement(PASSWORD_FIELD).sendKeys(password);
         return this;
     }
 
     public SignupPage confirmPassword(String password) {
-        PASSWORD_CONFIRM_FIELD.shouldBe(visible, interactable).sendKeys(password);
+        getVisibilitiOfElement(PASSWORD_CONFIRM_FIELD).sendKeys(password);
         return this;
     }
 
     public SignupPage setEmail(String email) {
-        EMAIL_FIELD.shouldBe(visible, interactable).sendKeys(email);
+        getVisibilitiOfElement(EMAIL_FIELD).sendKeys(email);
         return this;
     }
 
     public SignupPage submitRegistration() {
-        SIGNUP_BTN.shouldBe(visible).click();
+        getVisibilitiOfElement(SIGNUP_BTN).click();
         return this;
     }
 
     public String getVerificationText() {
-        return ACCOUNT_VERIFICATION_MSG.getText();
+        return getVisibilitiOfElement(ACCOUNT_VERIFICATION_MSG).getText();
     }
 }

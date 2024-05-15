@@ -11,14 +11,14 @@ public class UserEditProfilePage extends SettingsBasePage {
     private final SelenideElement CURRENT_AVATAR = $x("//p[@class='avatar']");
 
     public UserEditProfilePage clickUploadAvatarBtn() {
-        UPLOAD_AVATAR_BTN.click();
+        getVisibilitiOfElement(UPLOAD_AVATAR_BTN).click();
         File file = new File("D:\\\\photo_2024-04-11_03-32-58.jpg");
-        SELECT_FILES_BTN.uploadFile(file);
+        getVisibilitiOfElement(SELECT_FILES_BTN).uploadFile(file);
         return new UserEditProfilePage();
     }
 
     public boolean newAvatarDisplayed() {
-        CURRENT_AVATAR.getText();
+        getVisibilitiOfElement(CURRENT_AVATAR).getText();
         return true;
     }
 }

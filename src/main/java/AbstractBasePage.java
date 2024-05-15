@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public abstract class AbstractBasePage<T extends AbstractBasePage> {
+public abstract class AbstractBasePage<T extends AbstractBasePage> extends Waiters {
 
     private final SelenideElement JOIN_TMDB_REGISTER_BTN = $(By.xpath("//div[@class='flex']//a[@href='/signup']"));
     private final SelenideElement ACCEPT_COOKIES = $(By.id("onetrust-accept-btn-handler"));
@@ -27,57 +27,57 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> {
     }
 
     public SignupPage openSignupPage() {
-        JOIN_TMDB_REGISTER_BTN.shouldBe(visible).click();
+        getVisibilitiOfElement(JOIN_TMDB_REGISTER_BTN).click();
         return new SignupPage();
     }
 
     public LoginPage openLoginPage() {
-        LOGIN_NAV_LINK.shouldBe(visible).click();
+        getVisibilitiOfElement(LOGIN_NAV_LINK).click();
         return new LoginPage();
     }
 
     public UserRatingsPage openUserRatingsTab() {
-        PROFILE_MENU.click();
-        RATING_TAB.click();
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(RATING_TAB).click();
         return new UserRatingsPage();
     }
 
     public HomePage openHomePage() {
-        LOGO_BTN.click();
+        getVisibilitiOfElement(LOGO_BTN).click();
         return new HomePage();
     }
 
     public UserListPage openUserListPage() {
-        PROFILE_MENU.shouldBe(visible, interactable).click();
-        USER_LIST_NAV_LINK.shouldBe(visible, interactable).click();
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(USER_LIST_NAV_LINK).click();
         return new UserListPage();
     }
 
     public MoviesSearchPage openPopularMoviePage() {
-        MOVIE_BTN.shouldBe(visible).click();
-        POPULAR_NAV_LINK.shouldBe(visible).click();
+        getVisibilitiOfElement(MOVIE_BTN).click();
+        getVisibilitiOfElement(POPULAR_NAV_LINK).click();
         return new MoviesSearchPage();
     }
 
     public UserWatchlistPage openUserWatchlistTab() {
-        PROFILE_MENU.click();
-        WATCHLIST_TAB.click();
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(WATCHLIST_TAB).click();
         return new UserWatchlistPage();
     }
 
     public String getNameMovie() {
-        return MOVIE_NAME.getText();
+        return getVisibilitiOfElement(MOVIE_NAME).getText();
     }
 
     public UserAccountSettingsPage openAccountSettings() {
-        PROFILE_MENU.click();
-        PROFILE_SETTING_TAB.click();
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(PROFILE_SETTING_TAB).click();
         return new UserAccountSettingsPage();
     }
 
     public UserEditProfilePage openEditProfile() {
-        PROFILE_MENU.click();
-        PROFILE_EDIT_TAB.click();
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(PROFILE_EDIT_TAB).click();
         return new UserEditProfilePage();
     }
 }

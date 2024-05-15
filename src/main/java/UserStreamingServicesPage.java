@@ -10,10 +10,10 @@ public class UserStreamingServicesPage extends SettingsBasePage {
     private final ElementsCollection STREAMING_PROVIDERS = $$x("//ul[@id='ott_providers']//a");
 
     public void subscribeToNetflix() {
-        STREAMING_PROVIDERS.get(0).click();
+        getListPresentElements(STREAMING_PROVIDERS).get(0).click();
     }
 
     public String checkNetflixSub() {
-        return SUBSCRIBED_PROVIDER.getAttribute("alt");
+        return getVisibilitiOfElement(SUBSCRIBED_PROVIDER).getAttribute("alt");
     }
 }
