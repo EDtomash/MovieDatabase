@@ -12,9 +12,11 @@ public class ConfigTest {
 
     @BeforeMethod
     public void setup() {
-        Configuration.browser = "chrome";
+        Configuration.browser = System.getProperty("selenide.browser", "chrome");
         Configuration.browserSize = "1920x1080";
-        Configuration.headless = false;
+        Configuration.headless = Boolean.parseBoolean(System.getProperty("selenide.headless", "true"));
+        System.out.println("Browser: " + Configuration.browser);
+        System.out.println("Headless: " + Configuration.headless);
         open("https://www.themoviedb.org");
     }
 
