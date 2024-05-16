@@ -14,15 +14,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>headless</id>
-            <properties>
-                <selenide.headless>true</selenide.headless>
-            </properties>
-        </profile>
-    </profiles>
-
     <dependencies>
         <!-- https://mvnrepository.com/artifact/net.datafaker/datafaker -->
         <dependency>
