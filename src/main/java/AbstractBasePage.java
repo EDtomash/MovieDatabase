@@ -20,6 +20,8 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> extends Waite
     private final SelenideElement MOVIE_NAME = $x("//h2[text()='Abigail']");
     private final SelenideElement PROFILE_SETTING_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Settings']");
     private final SelenideElement PROFILE_EDIT_TAB = $x("//div[@class='k-tooltip-content']//a[text()='Edit Profile']");
+    private final SelenideElement LOGOUT_BTN = $x("//div[@class='k-tooltip-content']//a[text()='Logout']");
+    private final SelenideElement LOGOUT_MESSAGE = $x("(//div[@class='content_wrapper wrap'])[1]");
 
     public T acceptAllCookies() {
         ACCEPT_COOKIES.shouldBe(visible).click();
@@ -79,5 +81,15 @@ public abstract class AbstractBasePage<T extends AbstractBasePage> extends Waite
         getVisibilitiOfElement(PROFILE_MENU).click();
         getVisibilitiOfElement(PROFILE_EDIT_TAB).click();
         return new UserEditProfilePage();
+    }
+
+    public HomePage clickLogoutBtn() {
+        getVisibilitiOfElement(PROFILE_MENU).click();
+        getVisibilitiOfElement(LOGOUT_BTN).click();
+        return new HomePage();
+    }
+
+    public String getLogoutMessage() {
+        return getVisibilitiOfElement(LOGOUT_MESSAGE).getText();
     }
 }
