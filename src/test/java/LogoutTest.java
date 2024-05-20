@@ -14,6 +14,6 @@ public class LogoutTest extends ConfigTest{
                 .openHomePage()
                 .clickLogoutBtn()
                 .getLogoutMessage();
-        Assert.assertEquals(loggedOutText, loggedOutText);
+        Assert.assertEquals(loggedOutText, "Logged Out!\nYou have been successfully logged out.");
     }
 }
