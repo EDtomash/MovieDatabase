@@ -1,9 +1,14 @@
 import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.OutputType;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.testng.AllureTestNg;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ConfigTest {
 
@@ -21,7 +26,15 @@ public class ConfigTest {
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void tearDown(ITestResult result) {
+
+        if (!result.isSuccess()) {
+            saveScreenshot();
+        }
         closeWebDriver();
+    }
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] saveScreenshot() {
+        return screenshot(OutputType.BYTES);
     }
 }
