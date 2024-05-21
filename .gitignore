@@ -1,7 +1,11 @@
-target/
+/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+.build
+/allure-results/
+/allure-report/
+/.allure/
 
 ### IntelliJ IDEA ###
 .idea/*
